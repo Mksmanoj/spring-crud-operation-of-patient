@@ -19,4 +19,8 @@ public class HomeController {
 		model.addAttribute("user", new User());
 		return "signup";
 	}
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
 }
