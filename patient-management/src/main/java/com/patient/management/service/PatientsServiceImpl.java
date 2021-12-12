@@ -1,7 +1,6 @@
 package com.patient.management.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,18 +24,7 @@ public class PatientsServiceImpl implements PatientsService {
 		this.patientsDao.save(patients);
 	}
 
-	@Override
-	public Patients getPatientsById(long id) {
-		Optional<Patients> optional = patientsDao.findById(id);
-		Patients patients = null;
-		if (optional.isPresent()) {
-			patients = optional.get();
-		} else {
-			throw new RuntimeException(" patients not found for id :: " + id);
-		}
-		return patients;
-	}
-
+	
 	@Override
 	public void deletePatientsById(long id) {
 		this.patientsDao.deleteById(id);

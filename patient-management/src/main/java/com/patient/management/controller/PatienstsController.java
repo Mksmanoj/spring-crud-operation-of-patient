@@ -27,28 +27,17 @@ public class PatienstsController {
 
 	@GetMapping("/showNewPatientsForm")
 	public String showNewPatientsForm(Model model) {
-		// create model attribute to bind form data
-		Patients employee = new Patients();
-		model.addAttribute("employee", employee);
-		return "new_employee";
+		// creating model attribute to bind form data
+		Patients patients = new Patients();
+		model.addAttribute("patients", patients);
+		return "new_patients";
 	}
 
 	@PostMapping("/savePatients")
 	public String savePatients(@ModelAttribute("patients") Patients patients) {
-		// save Patients to database
+		// save Patients in database
 		patientsService.savePatients(patients);
 		return "redirect:/";
-	}
-
-	@GetMapping("/showFormForUpdate/{id}")
-	public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
-
-		// get Patients from the service
-		Patients patients = patientsService.getPatientsById(id);
-
-		// set Patients as a model attribute to pre-populate the form
-		model.addAttribute("patients", patients);
-		return "update_patients";
 	}
 
 	@GetMapping("/deletePatients/{id}")

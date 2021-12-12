@@ -9,7 +9,5 @@ public interface PatientsService {
 
 	void savePatients(Patients patients);
 
-	Patients getPatientsById(long id);
-
 	void deletePatientsById(long id);
 }

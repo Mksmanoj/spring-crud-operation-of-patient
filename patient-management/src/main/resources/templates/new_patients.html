@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hospital  Patients Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Hospital Patients Management</h1>
+		<hr>
+		<h2>Save Patients</h2>
+
+		<form action="#" th:action="@{/savePatients}" th:object="${patients}"
+			method="POST">
+			<input type="text" th:field="*{id}"
+				placeholder="Patients id" class="form-control mb-4 col-4"> 
+				
+			    <input type="text" th:field="*{patientName}"
+				placeholder="Patients Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{age}"
+				placeholder="Patients age" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{doctorName}"
+				placeholder="Assigned Doctor Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{admitDate}"
+				placeholder="Date (YYYY/MM/DD)" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{expences}"
+				placeholder="ex: 1000" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{status}"
+				placeholder="status(admitted or discharged)" class="form-control mb-4 col-4">
+				
+				
+				<button type="submit" class="btn btn-info col-2"> Save Patients</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/}"> Back to Patients List</a>
+	</div>
+</body>
+</html>

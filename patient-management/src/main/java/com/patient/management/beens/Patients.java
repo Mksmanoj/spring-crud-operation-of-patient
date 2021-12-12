@@ -18,7 +18,7 @@ public class Patients {
 	private long id;
 
 	@Column(name = "patient_name")
-	private String fullName;
+	private String patientName;
 
 	@Column(name = "age")
 	private int age;
@@ -43,12 +43,12 @@ public class Patients {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return fullName;
+	public String getPatientName() {
+		return patientName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.fullName = firstName;
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
 	}
 
 	public int getAge() {
