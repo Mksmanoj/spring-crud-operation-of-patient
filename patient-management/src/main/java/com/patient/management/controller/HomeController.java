@@ -9,7 +9,7 @@ import com.patient.management.beens.User;
 @Controller
 public class HomeController {
 
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String home() {
 		return "home";
 	}
